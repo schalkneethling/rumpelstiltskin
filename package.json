@@ -1,0 +1,37 @@
+{
+  "name": "rumpelstiltskin",
+  "version": "0.0.1",
+  "description": "A general utility to collect RUM(Real User Metrics) using the timing APIs",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schalkneethling/rumpelstiltskin.git"
+  },
+  "keywords": [
+    "utils",
+    "javascript",
+    "rum",
+    "user",
+    "timing"
+  ],
+  "author": "Schalk Neethling",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/schalkneethling/rumpelstiltskin/issues"
+  },
+  "homepage": "https://github.com/schalkneethling/rumpelstiltskin#readme",
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-preset-env": "1.7.0",
+    "eslint": "4.19.1",
+    "prettier": "1.12.1",
+    "sass-lint": "1.12.1",
+    "stylelint": "9.2.1"
+  },
+  "calavera": {
+    "commonjs": true
+  }
+}
