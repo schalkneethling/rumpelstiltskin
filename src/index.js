@@ -3,6 +3,17 @@
 const rumpelstiltskin = {
     /**
      * Calculate and return the difference between
+     * PerformanceTiming.domComplete and PerformanceTiming.domLoading
+     * NOTE: This focuses on the critical path only. Not when the user first
+     * made the request for the page to load, but once the DOM has started
+     * to be parsed
+     * @returns The time in milliseconds it took for the DOM to be complete
+     */
+    getTimeToDOMComplete: () => {
+        return performance.timing.domComplete - performance.timing.domLoading;
+    },
+    /**
+     * Calculate and return the difference between
      * PerformanceTiming.domInteractive and PerformanceTiming.domLoading
      * NOTE: This focuses on the critical path only. Not when the user first
      * made the request for the page to load, but once the DOM has started
