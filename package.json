@@ -1,12 +1,12 @@
 {
     "name": "rumpelstiltskin",
     "version": "0.0.0-semantically-released",
-    "description": "A general utility to collect RUM(Real User Metrics) using the timing APIs",
+    "description":
+        "A general utility to collect RUM(Real User Metrics) using the timing APIs",
     "main": "index.js",
     "scripts": {
         "compile": "babel src --out-file rumpelstilskin.js",
         "cz": "git-cz",
-        "test": "",
         "travis-deploy-once": "travis-deploy-once",
         "semantic-release": "semantic-release"
     },
@@ -14,13 +14,7 @@
         "type": "git",
         "url": "https://github.com/schalkneethling/rumpelstiltskin.git"
     },
-    "keywords": [
-        "utils",
-        "javascript",
-        "rum",
-        "user",
-        "timing"
-    ],
+    "keywords": ["utils", "javascript", "rum", "user", "timing"],
     "author": "Schalk Neethling",
     "license": "MIT",
     "bugs": {
