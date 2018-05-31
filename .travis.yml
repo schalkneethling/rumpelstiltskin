@@ -2,7 +2,7 @@ language: node_js
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
-before_script:
+script:
   - npm run compile
   - sleep 2 # give compile some time to complete
 cache:
