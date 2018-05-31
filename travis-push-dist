@@ -7,18 +7,18 @@ then
   exit
 fi
 
-# Uploads generated rumpelstilskin.js to master branch. Thx @erikrose, @pmac, @jwhitlock and @matteocrippa
+# Uploads generated rumpelstiltskin.js to master branch. Thx @erikrose, @pmac, @jwhitlock and @matteocrippa
 git checkout master
 
 git config user.name "schalkneethling"
 git config user.email "sneethling@mozilla.com"
 
-echo add rumpelstilskin.js
-git add -f rumpelstilskin.js
+echo add rumpelstiltskin.js
+git add -f rumpelstiltskin.js
 
 echo commit
-git commit -m "[auto] [ci skip] Pushing latest compiled rumpelstilskin.js"
+git commit -m "[auto] [ci skip] Pushing latest compiled rumpelstiltskin.js"
 
 echo push
 # Eat output so it doesn't spit out the sensitive GH_TOKEN if something goes wrong:
-git push -q -f "https://$GITHUB_TOKEN@github.com/schalkneethling/rumpelstilskin.git" master:master > /dev/null 2>&1
+git push -q -f "https://$GITHUB_TOKEN@github.com/schalkneethling/rumpelstiltskin.git" master:master > /dev/null 2>&1

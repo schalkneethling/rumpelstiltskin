@@ -5,7 +5,7 @@
         "A general utility to collect RUM(Real User Metrics) using the timing APIs",
     "main": "index.js",
     "scripts": {
-        "compile": "babel src --out-file rumpelstilskin.js",
+        "compile": "babel src --out-file rumpelstiltskin.js",
         "cz": "git-cz",
         "travis-deploy-once": "travis-deploy-once",
         "semantic-release": "semantic-release"

@@ -1,6 +1,6 @@
 'use strict';
 
-const rumpelstilskin = {
+const rumpelstiltskin = {
     /**
      * Calculate and return the difference between
      * PerformanceTiming.domInteractive and PerformanceTiming.domLoading
@@ -24,4 +24,4 @@ const rumpelstilskin = {
     }
 };
 
-window.rumpelstilskin = rumpelstilskin;
+window.rumpelstiltskin = rumpelstiltskin;
