@@ -1,11 +1,24 @@
-#!/bin/sh -e
-# Uploads generated rumpelstilskin.js to master branch. Thx @erikrose and @pmac
+#!/bin/bash
 
-git init
+set -e
+
+if [[ $TRAVIS_BRANCH != 'master' ]]
+then
+  exit
+fi
+
+# Uploads generated rumpelstilskin.js to master branch. Thx @erikrose, @pmac, @jwhitlock and @matteocrippa
+git checkout master
+
 git config user.name "schalkneethling"
 git config user.email "sneethling@mozilla.com"
+
+echo add rumpelstilskin.js
 git add -f rumpelstilskin.js
-git commit -m "Pushing latest compiled rumpelstilskin.js"
-git remote add schalkneethling "https://$GITHUB_TOKEN@github.com/schalkneethling/rumpelstilskin.git"
+
+echo commit
+git commit -m "[auto] [ci skip] Pushing latest compiled rumpelstilskin.js"
+
+echo push
 # Eat output so it doesn't spit out the sensitive GH_TOKEN if something goes wrong:
-git push -q -f schalkneethling master > /dev/null 2>&1
+git push -q -f "https://$GITHUB_TOKEN@github.com/schalkneethling/rumpelstilskin.git" master:master > /dev/null 2>&1
