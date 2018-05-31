@@ -4,9 +4,8 @@
 git init
 git config user.name "schalkneethling"
 git config user.email "sneethling@mozilla.com"
-git checkout master
-git add .
-git commit --allow-empty -m "Pushing latest compiled rumpelstilskin.js"
+git add -f rumpelstilskin.js
+git commit -m "Pushing latest compiled rumpelstilskin.js"
 git remote add schalkneethling "https://$GITHUB_TOKEN@github.com/schalkneethling/rumpelstilskin.git"
 # Eat output so it doesn't spit out the sensitive GH_TOKEN if something goes wrong:
 git push -q -f schalkneethling master > /dev/null 2>&1
