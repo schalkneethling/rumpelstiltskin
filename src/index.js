@@ -32,6 +32,28 @@ const rumpelstiltskin = {
      */
     getTimeToResponseComplete: () => {
         return performance.timing.responseEnd - performance.timing.fetchStart;
+    },
+    /**
+     * Creates a timestamp in the browser’s performance entry buffer with
+     * the provided label.
+     * @param {String} label - The name for the mark
+     */
+    setMark: label => {
+        if (performance.mark === undefined) {
+            console.error(
+                'performance.mark is not supported by your user-agant'
+            );
+            return;
+        }
+
+        /* Because a SyntaxError will be thrown if the provided label conflicts
+           with a name that already exist in the PerformanceTiming interface,
+           we wrap the call in a try/catch */
+        try {
+            performance.mark(label);
+        } catch (error) {
+            console.error(`Error while setting performance mark: ${error}`);
+        }
     }
 };
 
