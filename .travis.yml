@@ -4,7 +4,6 @@ branches:
     - /^v\d+\.\d+\.\d+$/
 script:
   - npm run compile
-  - sleep 2 # give compile some time to complete
 cache:
   directories:
     - ~/.npm
@@ -13,11 +12,5 @@ notifications:
 node_js:
   - '9'
   - '8'
-deploy:
-  provider: script
-  script: ./travis-push-dist
-  on:
-    branch: master
-  skip_cleanup: true
 after_success:
   - npm run travis-deploy-once "npm run semantic-release"
