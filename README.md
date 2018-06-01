@@ -6,6 +6,8 @@
 
 A general utility to collect RUM(Real User Metrics) using the timing and performance APIs
 
+# Contributing
+
 ## A note on commits
 
 To ensure commits follow the semantic-release/conventional commit format, you will need to run:
@@ -19,3 +21,14 @@ This is in place of the usual `git commit -m 'message'` format. To make the abov
 ```
 alias cz="npm run cz"
 ```
+
+# Building
+
+To build RUMpelstiltskin, do the following after having cloned the repo to your local machine:
+
+```
+npm i
+npm run compile
+```
+
+This will write the file `rumpelstiltskin.js` to the root of the project. Include this at the bottom of your HTML document, and you are ready to use RUMpelstiltskin.
