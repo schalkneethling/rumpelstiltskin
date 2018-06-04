@@ -2,6 +2,21 @@
 
 const rumpelstiltskin = {
     /**
+     * Collects and returns an Array of performance entries. Entries are
+     * either matched by label, entryType, or label and entryType
+     * @param {String} [label] - Optional name for the mark
+     * @param {String} [entryType] - Optional one of Performance.entryType
+     * @returns Array of performance entries matching the specified criteria
+     */
+    getPerformanceEntries: (label, entryType) => {
+        if (label && entryType) {
+            return performance.getEntriesByName(label, entryType);
+        } else if (entryType) {
+            return performance.getEntriesByType(entryType);
+        }
+        return performance.getEntriesByName(label);
+    },
+    /**
      * Calculate and return the difference between
      * PerformanceTiming.domComplete and PerformanceTiming.domLoading
      * NOTE: This focuses on the critical path only. Not when the user first
