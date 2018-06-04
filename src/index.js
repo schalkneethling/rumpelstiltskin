@@ -9,6 +9,15 @@ const rumpelstiltskin = {
      * @returns Array of performance entries matching the specified criteria
      */
     getPerformanceEntries: (label, entryType) => {
+        /* if both label and entryType is undefined 
+           log an error and return */
+        if (!label && !entryType) {
+            console.error(
+                'No parameters passed. Please pass at least a label or entryType'
+            );
+            return;
+        }
+
         if (label && entryType) {
             return performance.getEntriesByName(label, entryType);
         } else if (entryType) {
